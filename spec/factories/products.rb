@@ -5,5 +5,4 @@ FactoryGirl.define do
 		cost Faker::Commerce.price
 		image_url Faker::Avatar.image
   end
-
 end
