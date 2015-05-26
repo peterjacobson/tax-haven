@@ -29,5 +29,14 @@ RSpec.describe ProductsController, type: :controller do
 			expect(assigns(:product)).to eq(@product)
 		end
 	end
+
+	describe '#new' do
+		before do 
+			get :new
+		end
+
+		it { should respond_with(200) }
+		it { should render_template(:new) }
+	end
 end
 
