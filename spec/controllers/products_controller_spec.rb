@@ -5,7 +5,7 @@ RSpec.describe ProductsController, type: :controller do
 	describe '#index' do
 		
 		before do
-			5.times { Product.create }
+			5.times { create(:product) }
 			get :index
 		end
 
@@ -18,7 +18,8 @@ RSpec.describe ProductsController, type: :controller do
 
 	describe '#show' do
 		before do
-			@product = Product.create
+			@product = create(:product)
+			pp @product.id
 			get :show, { id: @product.id }
 		end
 
