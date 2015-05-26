@@ -47,8 +47,10 @@ group :development, :test do
   gem 'faker'
 
   gem 'factory_girl_rails'
+
 end
 
 group :test do
-	gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', require: false
+  # gem 'nyan-cat-formatter'
 end

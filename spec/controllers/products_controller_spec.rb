@@ -16,4 +16,17 @@ RSpec.describe ProductsController, type: :controller do
 		end
 	end
 
+	describe '#show' do
+		before do
+			@product = Product.create
+			get :show, { id: @product.id }
+		end
+
+		it { should respond_with(200) }
+		it { should render_template(:show) }
+		it "should assign product with specified id to @product" do
+			expect(assigns(:product)).to eq(@product)
+		end
+	end
 end
+

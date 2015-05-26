@@ -1,0 +1,11 @@
+<h1>Taxy Products</h1>
+
+<ul>
+	<% @products.each do |product| %>
+		<li>
+			<h2><%= product.name %></h2>
+			<img src="<%= product.image_url %>" >
+			<p><%= product.story %></p>
+		</li>
+	<% end %>
+</ul>
