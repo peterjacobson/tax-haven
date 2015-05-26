@@ -1,5 +1,13 @@
 <h1>Add product</h1>
 
+<% if @product.errors.any? %>
+	<ul>
+		<% @product.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
 <%= form_for :product, url: products_path do |f| %>
 	<p>
 		<%= f.label :name %><br>
@@ -23,3 +31,5 @@
 <% end %>
 
 <%= link_to('back', products_path) %>
+
+

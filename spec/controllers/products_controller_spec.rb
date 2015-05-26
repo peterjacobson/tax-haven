@@ -36,6 +36,9 @@ RSpec.describe ProductsController, type: :controller do
 
 		it { should respond_with(200) }
 		it { should render_template(:new) }
+		it "should assign an instance of Product to @product" do
+			expect(assigns(:product)).to be_a(Product)
+		end
 	end
 
 	describe '#create' do
@@ -62,7 +65,7 @@ RSpec.describe ProductsController, type: :controller do
 			it { should respond_with(400) }			
 			it { should render_template(:new) }
 			it "should not create a new product" do
-				expect(Product.where(@invalid_params)).to be_nil
+				expect(Product.where(@invalid_params)).to be_empty
 			end
 		end
 
