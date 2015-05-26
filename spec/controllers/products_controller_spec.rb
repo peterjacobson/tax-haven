@@ -19,7 +19,6 @@ RSpec.describe ProductsController, type: :controller do
 	describe '#show' do
 		before do
 			@product = create(:product)
-			pp @product.id
 			get :show, { id: @product.id }
 		end
 
